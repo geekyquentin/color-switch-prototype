@@ -11,11 +11,11 @@ public class StartGamePlay : MonoBehaviour {
     private void Start() {
         highScoreText.text = ScoreManager.highScore.ToString();
 
-        AudioManager.Music.mute = PlayerPrefs.GetInt(PlayerPref.MUSIC, 0) == 0 ? true : false;
-        musicOff.SetActive(PlayerPrefs.GetInt(PlayerPref.MUSIC, 1) == 0);
+        AudioManager.Music.mute = PlayerPrefs.GetInt(PlayerPref.MUSIC, 1).Equals(0);
+        musicOff.SetActive(AudioManager.Music.mute);
 
-        AudioManager.Sound.mute = PlayerPrefs.GetInt(PlayerPref.SOUND, 0) == 0 ? true : false;
-        soundOff.SetActive(PlayerPrefs.GetInt(PlayerPref.SOUND, 1) == 0);
+        AudioManager.Sound.mute = PlayerPrefs.GetInt(PlayerPref.SOUND, 1).Equals(0);
+        soundOff.SetActive(AudioManager.Sound.mute);
     }
 
     public void StartGame() {

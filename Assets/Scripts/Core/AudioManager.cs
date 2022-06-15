@@ -39,14 +39,14 @@ public class AudioManager : MonoBehaviour {
         instance.sound.PlayOneShot(instance.clickSound);
     }
 
-    public static void MuseMusic() {
+    public static void MuteMusic() {
         instance.startGamePlay = FindObjectOfType<StartGamePlay>();
         instance.music.mute = !instance.music.mute;
         PlayerPrefs.SetInt(PlayerPref.MUSIC, instance.music.mute ? 0 : 1);
         instance.startGamePlay.musicOff.SetActive(instance.music.mute);
     }
 
-    public static void MuseSound() {
+    public static void MuteSound() {
         instance.startGamePlay = FindObjectOfType<StartGamePlay>();
         instance.sound.mute = !instance.sound.mute;
         PlayerPrefs.SetInt(PlayerPref.SOUND, instance.sound.mute ? 0 : 1);
